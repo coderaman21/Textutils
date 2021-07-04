@@ -1,0 +1,22 @@
+{% extends 'basic.html' %}
+{% block title %} Analyzer {% endblock %}
+
+{% block body %}
+    {% if analyzed_text %}
+        <div class="container text-center my-2">
+            <h3>Your Analyzed Text is :</h3>
+            <h4><pre>{{analyzed_text}}</pre> <br> </h4>     <!-- pre tag is used to print the text same as it is (no new new line) -->
+            {% if char_count %}
+            <h3>Character in your text are :</h3>
+            <h6>{{char_count}}</h6>
+            {% endif %}
+        </div>
+    {% endif %}
+    
+{% endblock %}
+
+{% block js %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %} ToDo | Home {% endblock %}
+{% block todoactive %} active {% endblock %}
+{% block body %}
+{% if success %} 
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Hello User!</strong> Your Task has been Added successfully.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+{% endif %}
+<div class="container my-3 ">
+    <form action="/todo/" method="POST"> {% csrf_token %}
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"><b> Task title </b></label>
+            <input type="text" name="title" class="form-control" id="exampleFormControlInput1"
+                placeholder="Type here ....">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label"><b> Task Description </b></label>
+            <textarea class="form-control" name="desc" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Task</button>
+
+    </form>
+</div>
+{% endblock %}

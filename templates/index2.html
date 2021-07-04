@@ -1,0 +1,64 @@
+{% extends 'basic.html' %}
+{% block title %} Home {% endblock %}
+{% block homeactive %} active {% endblock %}
+
+{% block body %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Welcome User!</strong> Here You can perform diffrent action on your text.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+   
+    <div style="width: 61%; margin: auto">
+        <form action="/analyzer" method="POST"  > {% csrf_token %}     <!-- csrf is used for post request method  -->
+            <div class="conatiner mt-2">
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label"> <strong>Enter your text here:</strong>
+                    </label>
+                    <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="5" cols="6"
+                        style="border: 1px solid black; margin-top: 0px; margin-bottom: 0px; height: 186px;"></textarea>
+                </div>
+            </div>
+            <div class="form-check form-switch">
+                <input name="removepunc" class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked>
+                <label class="form-check-label" for="flexSwitchCheckDefault">Remove Punctuations</label>
+            </div>
+
+            <div class="form-check form-switch">
+                <input name="remspaces" class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+                <label class="form-check-label" for="flexSwitchCheckChecked"> Remove Extra spaces</label>
+            </div>
+            <div class="form-check form-switch">
+                <input name="charcount" class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+                <label class="form-check-label" for="flexSwitchCheckChecked"> Count Characters</label>
+            </div>
+            <div class="form-check form-switch">
+                <input name="new_line_remove" class="form-check-input" type="checkbox" id="flexSwitchCheckChecke" checked>
+                <label class="form-check-label" for="flexSwitchCheckChecked"> New Line Remover
+                </label>
+            </div>
+            <div class="form-check form-switch">
+                <input name="uppercase_text" class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+                <label class="form-check-label" for="flexSwitchCheckChecked"> Uppercase Text</label>
+            </div>
+            <div class="form-check form-switch">
+                <input name="capitlized" class="form-check-input" type="checkbox" id="flexSwitchCheckChecke" >
+                <label class="form-check-label" for="flexSwitchCheckChecked"> Capitlize the text
+                </label>
+            </div>
+
+            <button style="margin-top: 15px;" type="submit" class="btn btn-primary btn-sm">Analyze</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous">
+    </script>
+    <script>
+        
+    </script>
+{% endblock %}
+

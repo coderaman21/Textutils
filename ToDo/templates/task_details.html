@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %} ToDo | Tasks {% endblock %}
+{% block tasksactive %} active {% endblock %}
+{% block body %}
+<div class="container my-3 text-center">
+    <h3>{{taskDetails.taskTitle}} :</h3>
+    <p class="text-dark" >{{taskDetails.taskdesc}}</p>
+</div>
+
+{% endblock %}

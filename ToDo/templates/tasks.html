@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %} ToDo | Tasks {% endblock %}
+
+{% block tasksactive %} active {% endblock %}
+
+{% block css %} 
+<style>
+    ul li a{
+        text-decoration: none;
+    }
+    ul li a:hover{
+        text-decoration: underline;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="container my-3">
+    <h5>Your Tasks Are :</h5>
+    <ul class="list-group">
+        {% for task in tasks %}
+            {{forloop.counter}}.
+            <li class="list-group-item d-flex justify-content-between align-items-center mt-1"><a href="/todo/tasks/{{task.taskTitle}}" class="text-dark"> {{task.taskTitle}}</a> 
+                <span>{{task.time}}</span>
+            </li>
+        {% endfor %}
+      </ul>
+</div>
+{% endblock %}
