@@ -18,13 +18,17 @@ from django.urls import path
 from django.urls.conf import include
 from . import views
 
+from django.views.static import serve
+from django.conf.urls import url
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("",views.index,name="index"),
     path('analyzer',views.analyze,name="rempunc"),
     path('about',views.about,name="about"),
     path('contact',views.contact,name="contact"),
-    path('todo/',include('ToDo.urls'))
-    # path('about',views.about,name="about"),
-    # path('links',views.links,name='links')
-]
+    path('todo/',include('ToDo.urls')),
+    url(r'^media/(?P<path>.*)$', serve,{'document_root':settings.MEDIA_ROOT}), 
+    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
+] 
+
