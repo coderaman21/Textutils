@@ -27,8 +27,6 @@ urlpatterns = [
     path('analyzer',views.analyze,name="rempunc"),
     path('about',views.about,name="about"),
     path('contact',views.contact,name="contact"),
-    path('todo/',include('ToDo.urls')),
-    url(r'^media/(?P<path>.*)$', serve,{'document_root':settings.MEDIA_ROOT}), 
-    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
-] 
+    path('todo/',include('ToDo.urls'))
+    ] 
 
