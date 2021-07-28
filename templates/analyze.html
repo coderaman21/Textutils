@@ -1,11 +1,15 @@
 {% extends 'basic.html' %}
 {% block title %} Analyzer {% endblock %}
-
+{% block css %}
+<style>
+    pre{white-space: pre-wrap; overflow:hidden ;}
+</style>
+{% endblock %}
 {% block body %}
     {% if analyzed_text %}
         <div class="container text-center my-2">
             <h3>Your Analyzed Text is :</h3>
-            <h4><pre>{{analyzed_text}}</pre> <br> </h4>     <!-- pre tag is used to print the text same as it is (no new new line) -->
+           <h4><pre>{{analyzed_text}}</pre></h4> <br>   <!-- pre tag is used to print the text same as it is (no new new line) -->
             {% if char_count %}
             <h3>Character in your text are :</h3>
             <h6>{{char_count}}</h6>
@@ -20,3 +24,4 @@
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
         crossorigin="anonymous"></script>
 {% endblock %}
+

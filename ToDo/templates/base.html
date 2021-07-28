@@ -39,7 +39,12 @@
                         <a class="nav-link {% block contactactive%} {% endblock %}" href="/contact">Contact Us</a>
                     </li>
                 </ul>
-                {% block search %} {% endblock %}
+             
+                <form action="/todo/search" method="GET" class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+
  
             </div>
         </div>

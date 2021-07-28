@@ -29,5 +29,5 @@ urlpatterns = [
     path('contact',views.contact,name="contact"),
     path('todo/',include('ToDo.urls')),
     re_path(r'^media/(?P<path>.*)$', serve ,{'document_root':settings.MEDIA_ROOT})
-    ] 
+] 
 

@@ -3,7 +3,7 @@
 {% block tasksactive %} active {% endblock %}
 {% block body %}
 <div class="container my-3 text-center">
-    <h3>{{taskDetails.taskTitle}} :</h3>
+    <h3>{{taskDetails.taskTitle|title}} :</h3>
     <p class="text-dark" >{{taskDetails.taskdesc}}</p>
 </div>
 

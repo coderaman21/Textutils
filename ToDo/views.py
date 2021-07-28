@@ -4,7 +4,7 @@ from .models import Task
 def index(request):
     success = False
     if request.method == 'POST':
-        title = request.POST['title']
+        title = request.POST['title'].lower()
         desc = request.POST['desc']
         task = Task(taskTitle = title , taskdesc = desc)
         task.save()
@@ -17,5 +17,21 @@ def tasks(request):
 
 def taskdetail(request,myid):
     task_detail = Task.objects.filter(taskTitle = myid)
-
     return render(request,'task_details.html' ,{'taskDetails':task_detail[0]})
+
+def search(request):
+    if request.method == 'GET':
+        success = True
+        query = request.GET.get('search').lower()
+
+        task = Task.objects.filter(taskTitle = query)
+        if task:
+            tasks_list =[]
+            for i in task:
+                tasks_list.append(i)
+            return render(request,'search.html',{'query':query,'success':success,'tasks':tasks_list})
+        
+        else:
+            success = False
+            return render(request,'search.html',{'query':query,'success':success})
+        
