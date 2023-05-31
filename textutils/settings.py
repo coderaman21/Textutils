@@ -82,7 +82,7 @@ DATABASES = {
         'NAME': 'textutils',
         'USER': 'admin',
         'PASSWORD': 'YAtu3DZNKMxBvjhQZzKW9mYggiduqnpD',
-        'HOST': 'dpg-chrcspjhp8ud4n4k7lmg-a',
+        'HOST': 'dpg-chrcspjhp8ud4n4k7lmg-a.singapore-postgres.render.com',
         'PORT': '5432',
     }
 }
