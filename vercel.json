@@ -1,0 +1,14 @@
+{
+"builds": [
+    {
+      "src": "textutils/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "textutils/wsgi.py"
+    }
+  ]
+}

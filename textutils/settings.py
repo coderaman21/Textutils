@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-*6_3r75^6n#9r@x2%%d%%909qs0^=bw0)@dh!)lxe4ev-8iew%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','textutils-0tie.onrender.com']
+ALLOWED_HOSTS = ['127.0.0.1','.vercel.app']
 
 
 # Application definition
@@ -70,7 +70,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'textutils.wsgi.application'
+WSGI_APPLICATION = 'textutils.wsgi.app'
 
 
 # Database
@@ -78,8 +78,12 @@ WSGI_APPLICATION = 'textutils.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+       'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'textutils',
+        'USER': 'admin',
+        'PASSWORD': 'YAtu3DZNKMxBvjhQZzKW9mYggiduqnpD',
+        'HOST': 'dpg-chrcspjhp8ud4n4k7lmg-a',
+        'PORT': '5432',
     }
 }
 
