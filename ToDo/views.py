@@ -11,14 +11,6 @@ def index(request):
         success = True
     return render(request,'index.html' , {"success":success})
 
-def tasks(request):
-    task = Task.objects.all()
-    return render(request,'tasks.html' ,{'tasks':task})
-
-def taskdetail(request,myid):
-    task_detail = Task.objects.filter(taskTitle = myid)
-    return render(request,'task_details.html' ,{'taskDetails':task_detail[0]})
-
 def search(request):
     if request.method == 'GET':
         success = True

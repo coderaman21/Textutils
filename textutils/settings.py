@@ -77,14 +77,7 @@ WSGI_APPLICATION = 'textutils.wsgi.app'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-       'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'textutils',
-        'USER': 'admin',
-        'PASSWORD': 'YAtu3DZNKMxBvjhQZzKW9mYggiduqnpD',
-        'HOST': 'dpg-chrcspjhp8ud4n4k7lmg-a.singapore-postgres.render.com',
-        'PORT': '5432',
-    }
+
 }
 
 
